@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://ag.agile1.com/Tech/Admin/GlobalCurrency.aspx -->
+<html lang="en" class=""><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>
+	Welcome to AccelerationVMS
+</title><link rel="stylesheet" type="text/css" href="./AccelVMSPlainHtml_files/jquery-ui.css"><link rel="stylesheet" type="text/css" href="./AccelVMSPlainHtml_files/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="./AccelVMSPlainHtml_files/main-admin.css"><link href="./AccelVMSPlainHtml_files/toastr.min.css" type="text/css" rel="stylesheet">
+    <!-- ADD:START -->
+    <script type="text/javascript" src="./madness.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <script type='text/babel'>
+
+const Sample = ({children}) =>
+    <div style='color: red'>I AM REACT: {children}</div>
+
+window.onload = function() {
+  const e1 = document.querySelector('Sample')
+  console.log('e1', e1.outerHTML)
+  const originalEl = document.getElementById('original')
+  const reactEl = document.getElementById('react')
+//   const originalHtml = original.innerHTML.replace('<sample', '<Sample').replace('</sample', '</Sample')
+  const originalHtml = original.innerHTML
+  console.log('originalHtml', originalHtml)
+  ReactDOM.hydrate(
+    //   originalHtml,
+    <div dangerouslySetInnerHTML={{__html: originalHtml}}></div>,
+    reactEl
+  )
+//   ReactDOM.render(
+//     <div dangerouslySetInnerHTML={{__html: original.innerHTML.replace('<sample', '<BUTTS').replace('</sample', '</Sample')}}></div>,
+//     reactEl
+//   )
+  original.style = 'display: none;'
+}
+</script>
+<style type='text/css'>
+    #xoriginal {
+        display: none;
+    }
+</style>
+    <!-- ADD: END -->
+              
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.0.1.js" integrity="sha256-VvnF+Zgpd00LL73P2XULYXEn6ROvoFaa/vbfoiFlZZ4=" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/toastr.min.js"></script>
+
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/ep.scripts.js"></script>
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/ScriptMessages.ashx"></script>
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/jquery.balloon.min.js"></script>    
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/jquery.hoverIntent.js"></script>
+    <script type="text/javascript" src="./AccelVMSPlainHtml_files/superfish.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+ 
+            EP.addBodyClass();
+
+            $('input[type=text],textarea').on('focusin', function (event) {
+                if (!$(this).prop('disabled') && !$(this).prop('readonly')) {
+                    $(this).removeClass('inputblur').addClass('inputfocus');
+                }                
+            });                       
+
+            $('input[type=text],textarea').on('focusout', function (event) {
+                if (!$(this).prop('disabled') && !$(this).prop('readonly')) {
+                    $(this).removeClass('inputfocus').addClass('inputblur');
+                }
+            });
+            
+            $.each($('.tt'), function (key, value) {
+                $(this).balloon({
+                    position: 'right',
+                    html: true,
+                    contents: $(this).attr("title"),
+                    css: {
+                        backgroundColor: '#fff',
+                        color: '#666',
+                        opacity: "1",
+                        fontSize: "12px"
+                    }
+                });
+            });
+
+            $('.table').each(function() {
+                if(!$(this).parents('.table-responsive').length) {
+                    $(this).not('.table-custom').wrap('<div class="table-responsive"></div>');
+                }
+            });
+
+            $('input[id*="txtLoginName"]').trigger('focus');
+
+        });
+    </script>
+    
+    
+    
+    
+    <script type="text/javascript">
+        function saved(msg) {
+            EP.Toaster.clear();
+            EP.Toaster.success(msg,'',{
+                'onHidden': function () {
+                    location.href='GlobalCurrency.aspx';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <!-- ADD:START -->
+    <div id='react'></div>
+    <div id='original'>
+    <!-- ADD: END -->
+    <form method="post" action="https://ag.agile1.com/Tech/Admin/GlobalCurrency.aspx" id="aspnetForm" autocomplete="off">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTExNjgxMzg2MTcPZBYCZg9kFgRmD2QWBAIGDxYCHgRocmVmBSovVGVjaC9zdHlsZVNoZWV0cy9tYWluLWFkbWluLmNzcz92PTkuMS4wLjBkAggPFQYlL1RlY2gvc2NyaXB0cy9lcC5zY3JpcHRzLmpzP3Y9OS4xLjAuMEIvVGVjaC9zY3JpcHRzL1NjcmlwdE1lc3NhZ2VzLmFzaHg/dHlwZT1kaWFsb2cmbGFuZz1lbi1VUyZ2PTkuMS4wLjAtL1RlY2gvc2NyaXB0cy9qcXVlcnkuYmFsbG9vbi5taW4uanM/dj05LjEuMC4wKS9UZWNoL3NjcmlwdHMvanF1ZXJ5LmJsb2NrVUkuanM/dj05LjEuMC4wLS9UZWNoL3NjcmlwdHMvanF1ZXJ5LmhvdmVySW50ZW50LmpzP3Y9OS4xLjAuMCgvVGVjaC9zY3JpcHRzL3N1cGVyZmlzaC5taW4uanM/dj05LjEuMC4wZAIBD2QWCAIBD2QWBGYPFgIeBFRleHQFIFlvdXIgc2Vzc2lvbiBpcyBhYm91dCB0byBleHBpcmUuZAIBDxYCHwEFHUNsaWNrIGhlcmUgdG8gc3RheSBsb2dnZWQgaW4uZAIDD2QWyAFmDw8WAh8BBQRIb21lZGQCAQ8PFgIfAQUGR2xvYmFsZGQCAg8PFgIfAQUFQ29kZXNkZAIDDw8WAh8BBQVDb2Rlc2RkAgQPDxYCHwEFEUNvZGUgV2l0aCBDb3VudHJ5ZGQCBQ8PFgIfAQUQQ29kZSBXaXRoIFJlYXNvbmRkAgYPDxYCHwEFGUNvZGUgV2l0aCBOZWdhdGl2ZSBSZWFzb25kZAIHDw8WAh8BBQZTa2lsbHNkZAIIDw8WAh8BBQZTa2lsbHNkZAIJDw8WAh8BBQ5Ta2lsbCBDYXRlZ29yeWRkAgoPDxYCHwEFEUFzc29jaWF0ZWQgU2tpbGxzZGQCCw8PFgIfAQUMSm9iIENhdGVnb3J5ZGQCDA8PFgIfAQUJSm9iIFRpdGxlZGQCDQ8PFgIfAQUISm9iIFR5cGVkZAIODw8WAh8BBQpTY3JlZW5pbmdzZGQCDw8PFgIfAQUJRWR1Y2F0aW9uZGQCEA8PFgIfAQUNU3BlY2lhbCBCaWxsc2RkAhEPDxYCHwEFClBheSBQb2xpY3lkZAISDw8WAh8BBQ1TaGlmdCBQcmVtaXVtZGQCEw8PFgIfAQUFR3JvdXBkZAIUDw8WAh8BBQVTZXR1cGRkAhUPDxYCHwEFCE9uIEJvYXJkZGQCFg8PFgIfAQURT24gQm9hcmQgQ2F0ZWdvcnlkZAIXDw8WAh8BBRZPbiBCb2FyZCBDYXRlZ29yeSBJdGVtZGQCGA8PFgIfAQUGQ29uZmlnZGQCGQ8PFgIfAQURU2VjdXJpdHkgUXVlc3Rpb25kZAIaDw8WAh8BBRRHbG9iYWwgQ291bnRyeS9TdGF0ZWRkAhsPDxYCHwEFCUNvdW50cmllc2RkAhwPDxYCHwEFBlN0YXRlc2RkAh0PDxYCHwEFEElDQyBPbmJvYXJkIEl0ZW1kZAIeDw8WAh8BBQpUaW1lIFpvbmVzZGQCHw8PFgIfAQUKQ3VycmVuY2llc2RkAiAPDxYCHwEFEUNvbnRyYWN0IFRlbXBsYXRlZGQCIQ8PFgIfAQUHUGFydG5lcmRkAiIPDxYCHwEFDkdsb2JhbCBQYXJ0bmVyZGQCIw8PFgIfAQUUQ29uZmlnIFBhcnRuZXIgU2V0dXBkZAIkDw8WAh8BBQ5DbGllbnQgUGFydG5lcmRkAiUPDxYCHwEFFUNvbmZpZyBDbGllbnQgUGFydG5lcmRkAiYPDxYCHwEFF1ZlbmRvciBMb2NhdGlvbiBQYXJ0bmVyZGQCJw8PFgIfAQUeQ29uZmlnIFZlbmRvciBMb2NhdGlvbiBQYXJ0bmVyZGQCKA8PFgIfAQUKR2xvYmFsIFVERmRkAikPDxYCHwEFCUluc3VyYW5jZWRkAioPDxYCHwEFCUluc3VyYW5jZWRkAisPDxYCHwEFEkluc3VyYW5jZSBDYXRlZ29yeWRkAiwPDxYCHwEFCERvY3VtZW50ZGQCLQ8PFgIfAQUIRG9jdW1lbnRkZAIuDw8WAh8BBRFEb2N1bWVudCBDYXRlZ29yeWRkAi8PDxYCHwEFF0dsb2JhbCBTdXJ2ZXkgUXVlc3Rpb25zZGQCMA8PFgIfAQUKVXNlciBMZXZlbGRkAjEPDxYCHwEFFlByb2plY3QgTWFuYWdlbWVudCBGZWVkZAIyDw8WAh8BBQtXb3JrIFN0YXR1c2RkAjMPDxYCHwEFE0dsb2JhbCBQYXltZW50IFRlcm1kZAI0Dw8WBB8BBRBQYXkgSW5jIFNjaGVkdWxlHgdWaXNpYmxlaGRkAjUPDxYCHwEFI1Byb2plY3QgQmlsbCBUeXBlICsgQ2xpZW50IFBheSBDb2RlZGQCNg8PFgIfAQUNSHRtbCBUZW1wbGF0ZWRkAjcPDxYCHwEFBkNsaWVudGRkAjgPDxYCHwEFBkNsaWVudGRkAjkPDxYCHwEFCUxvY2F0aW9uc2RkAjoPDxYCHwEFBVVzZXJzZGQCOw8PFgIfAQUKSm9iIFRpdGxlc2RkAjwPDxYCHwEFDVNwZWNpYWwgQmlsbHNkZAI9Dw8WAh8BBRhFbmQgb2YgQXNzaWdubWVudCBTdXJ2ZXlkZAI+Dw8WAh8BBQdSZXBvcnRzZGQCPw8PFgIfAQUIUGF5IENvZGVkZAJADw8WAh8BBQ1Xb3JrIExvY2F0aW9uZGQCQQ8PFgIfAQUGQ29uZmlnZGQCQg8PFgIfAQUNQ29uZmlnIENsaWVudGRkAkMPDxYCHwEFEENvbmZpZyBMb2NhdGlvbnNkZAJEDw8WAh8BBQdNZXNzYWdlZGQCRQ8PFgIfAQUIRG9jdW1lbnRkZAJGDw8WAh8BBQdQYWdlVVJMZGQCRw8PFgIfAQUXQ2xhc3NpZmljYXRpb24gRGVjaXNpb25kZAJIDw8WAh8BBR9Xb3JrZXIgQ2xhc3NmaWNhdGlvbiBSdWxlIFNldHVwZGQCSQ8PFgIfAQUWQ2xhc3NpZmljYXRpb24gSGlzdG9yeWRkAkoPDxYCHwEFDFBheW1lbnQgVGVybWRkAksPDxYCHwEFBlZlbmRvcmRkAkwPDxYCHwEFB1ZlbmRvcnNkZAJNDw8WAh8BBQlMb2NhdGlvbnNkZAJODw8WAh8BBQVVc2Vyc2RkAk8PDxYCHwEFCFBheSBDb2RlZGQCUA8PFgIfAQUNQmlsbGluZyBDb2Rlc2RkAlEPDxYCHwEFCFNjaGVkdWxlZGQCUg8PFgIfAQUTVm9sdW1lIERpc2NvdW50IFNjaGRkAlMPDxYCHwEFD1RlbnVyZSBEaXNjb3VudGRkAlQPDxYCHwEFBkNvbmZpZ2RkAlUPDxYCHwEFDUNvbmZpZyBWZW5kb3JkZAJWDw8WAh8BBRBDb25maWcgTG9jYXRpb25zZGQCVw8PFgIfAQUJTVNQIFNldHVwZGQCWA8PFgIfAQUHUmVwb3J0c2RkAlkPDxYCHwEFDUFkbWluIFJlcG9ydHNkZAJaDw8WAh8BBRlBZGQgQWRob2MgUmVwb3J0IHRvIFVzZXJzZGQCWw8PFgIfAQUTVGltZWNhcmQgQWRqdXN0bWVudGRkAlwPDxYCHwEFCVRlbXBsYXRlc2RkAl0PDxYCHwEFBFR5cGVkZAJeDw8WAh8BBQlRdWVzdGlvbnNkZAJfDw8WAh8BBQdUaGVtZXMgZGQCYA8PFgIfAQUHTGF5b3V0c2RkAmEPDxYCHwEFB0NvbnRhY3RkZAJiDw8WAh8BBQRIZWxwZGQCYw8PFgIfAQUIU2lnbiBPdXRkZAIFD2QWBgIBDw8WAh8BBRRHbG9iYWwgQ3VycmVuY3kgTGlzdGRkAgMPPCsABAEADxYEHhFMZWZ0TGlzdExhYmVsVGV4dAUeQXZhaWxhYmxlIEdsb2JhbCBDdXJyZW5jeSBMaXN0HhJSaWdodExpc3RMYWJlbFRleHQFG0FjdGl2ZSBHbG9iYWwgQ3VycmVuY3kgTGlzdGQWAgIBD2QWBGYPZBYCZg8QDxYCHgtfIURhdGFCb3VuZGdkEBWuASNBRUQgKFVuaXRlZCBBcmFiIEVtaXJhdGVzLCBEaXJoYW1zKRtBRk4gKEFmZ2hhbmlzdGFuLCBBZmdoYW5pcykTQUxMIChBbGJhbmlhLCBMZWtlKRRBTUQgKEFybWVuaWEsIERyYW1zKTpBTkcgKE5ldGhlcmxhbmRzIEFudGlsbGVzLCBHdWlsZGVycyAoYWxzbyBjYWxsZWQgRmxvcmlucykpFEFPQSAoQW5nb2xhLCBLd2FuemEpFkFSUyAoQXJnZW50aW5hLCBQZXNvcykYQVVEIChBdXN0cmFsaWEsIERvbGxhcnMpK0FXRyAoQXJ1YmEsIEd1aWxkZXJzIChhbHNvIGNhbGxlZCBGbG9yaW5zKSkjQVpNIChBemVyYmFpamFuLCBNYW5hdHMgW29ic29sZXRlXSkcQVpOIChBemVyYmFpamFuLCBOZXcgTWFuYXRzKS9CQU0gKEJvc25pYSBhbmQgSGVyemVnb3ZpbmEsIENvbnZlcnRpYmxlIE1hcmthKRdCQkQgKEJhcmJhZG9zLCBEb2xsYXJzKRZCRFQgKEJhbmdsYWRlc2gsIFRha2EpFEJHTiAoQnVsZ2FyaWEsIExldmEpFUJIRCAoQmFocmFpbiwgRGluYXJzKRVCSUYgKEJ1cnVuZGksIEZyYW5jcykWQk1EIChCZXJtdWRhLCBEb2xsYXJzKSBCTkQgKEJydW5laSBEYXJ1c3NhbGFtLCBEb2xsYXJzKRlCT0IgKEJvbGl2aWEsIEJvbGl2aWFub3MpGUJSTCAoQnJhemlsLCBCcmF6aWwgUmVhbCkWQlNEIChCYWhhbWFzLCBEb2xsYXJzKRZCVE4gKEJodXRhbiwgTmd1bHRydW0pFUJXUCAoQm90c3dhbmEsIFB1bGFzKRVCWVIgKEJlbGFydXMsIFJ1YmxlcykVQlpEIChCZWxpemUsIERvbGxhcnMpJkNERiAoQ29uZ28vS2luc2hhc2EsIENvbmdvbGVzZSBGcmFuY3MpGUNIRiAoU3dpdHplcmxhbmQsIEZyYW5jcykSQ0xQIChDaGlsZSwgUGVzb3MpGkNOWSAoQ2hpbmEsIFl1YW4gUmVubWluYmkpFUNPUCAoQ29sb21iaWEsIFBlc29zKRlDUkMgKENvc3RhIFJpY2EsIENvbG9uZXMpEUNVUCAoQ3ViYSwgUGVzb3MpGUNWRSAoQ2FwZSBWZXJkZSwgRXNjdWRvcykUQ1lQIChDeXBydXMsIFBvdW5kcykcQ1pLIChDemVjaCBSZXB1YmxpYywgS29ydW55KRZESkYgKERqaWJvdXRpLCBGcmFuY3MpFURLSyAoRGVubWFyaywgS3JvbmVyKR9ET1AgKERvbWluaWNhbiBSZXB1YmxpYywgUGVzb3MpHURaRCAoQWxnZXJpYSwgQWxnZXJpYSBEaW5hcnMpFUVFSyAoRXN0b25pYSwgS3Jvb25pKRNFR1AgKEVneXB0LCBQb3VuZHMpFEVSTiAoRXJpdHJlYSwgTmFrZmEpFEVUQiAoRXRoaW9waWEsIEJpcnIpE0ZKRCAoRmlqaSwgRG9sbGFycykpRktQIChGYWxrbGFuZCBJc2xhbmRzIChNYWx2aW5hcyksIFBvdW5kcykcR0JQIChVbml0ZWQgS2luZ2RvbSwgUG91bmRzKRNHRUwgKEdlb3JnaWEsIExhcmkpFkdHUCAoR3Vlcm5zZXksIFBvdW5kcykSR0hDIChHaGFuYSwgQ2VkaXMpEkdIUyAoR2hhbmEsIENlZGlzKRdHSVAgKEdpYnJhbHRhciwgUG91bmRzKRRHTUQgKEdhbWJpYSwgRGFsYXNpKRRHTkYgKEd1aW5lYSwgRnJhbmNzKRpHVFEgKEd1YXRlbWFsYSwgUXVldHphbGVzKRVHWUQgKEd1eWFuYSwgRG9sbGFycykYSEtEIChIb25nIEtvbmcsIERvbGxhcnMpGEhOTCAoSG9uZHVyYXMsIExlbXBpcmFzKRNIUksgKENyb2F0aWEsIEt1bmEpFEhURyAoSGFpdGksIEdvdXJkZXMpFUhVRiAoSHVuZ2FyeSwgRm9yaW50KRhJRFIgKEluZG9uZXNpYSwgUnVwaWFocykZSUxTIChJc3JhZWwsIE5ldyBTaGVrZWxzKRlJTVAgKElzbGUgb2YgTWFuLCBQb3VuZHMpE0lOUiAoSW5kaWEsIFJ1cGVlcykSSVFEIChJcmFxLCBEaW5hcnMpEUlSUiAoSXJhbiwgUmlhbHMpFUlTSyAoSWNlbGFuZCwgS3JvbnVyKRRKRVAgKEplcnNleSwgUG91bmRzKRZKTUQgKEphbWFpY2EsIERvbGxhcnMpFEpPRCAoSm9yZGFuLCBEaW5hcnMpEEpQWSAoSmFwYW4sIFllbikWS0VTIChLZW55YSwgU2hpbGxpbmdzKRZLR1MgKEt5cmd5enN0YW4sIFNvbXMpFUtIUiAoQ2FtYm9kaWEsIFJpZWxzKRVLTUYgKENvbW9yb3MsIEZyYW5jcykYS1BXIChLb3JlYSAoTm9ydGgpLCBXb24pGEtSVyAoS29yZWEgKFNvdXRoKSwgV29uKRRLV0QgKEt1d2FpdCwgRGluYXJzKR1LWUQgKENheW1hbiBJc2xhbmRzLCBEb2xsYXJzKRdLWlQgKEthemFraHN0YW4sIFRlbmdlKRBMQUsgKExhb3MsIEtpcHMpFUxCUCAoTGViYW5vbiwgUG91bmRzKRdMS1IgKFNyaSBMYW5rYSwgUnVwZWVzKRZMUkQgKExpYmVyaWEsIERvbGxhcnMpFUxTTCAoTGVzb3RobywgTWFsb3RpKRZMVEwgKExpdGh1YW5pYSwgTGl0YWkpEkxWTCAoTGF0dmlhLCBMYXRpKRNMWUQgKExpYnlhLCBEaW5hcnMpFk1BRCAoTW9yb2NjbywgRGlyaGFtcykSTURMIChNb2xkb3ZhLCBMZWkpGE1HQSAoTWFkYWdhc2NhciwgQXJpYXJ5KRdNS0QgKE1hY2Vkb25pYSwgRGVuYXJzKRxNTUsgKE15YW5tYXIgKEJ1cm1hKSwgS3lhdHMpF01OVCAoTW9uZ29saWEsIFR1Z3Jpa3MpFE1PUCAoTWFjYXUsIFBhdGFjYXMpGk1STyAoTWF1cml0YW5pYSwgT3VndWl5YXMpEU1UTCAoTWFsdGEsIExpcmkpF01VUiAoTWF1cml0aXVzLCBSdXBlZXMpKU1WUiAoTWFsZGl2ZXMgKE1hbGRpdmUgSXNsYW5kcyksIFJ1Zml5YWEpFU1XSyAoTWFsYXdpLCBLd2FjaGFzKRNNWE4gKE1leGljbywgUGVzb3MpGE1ZUiAoTWFsYXlzaWEsIFJpbmdnaXRzKSVNWk0gKE1vemFtYmlxdWUsIE1ldGljYWlzIFtvYnNvbGV0ZV0pMk1aTiAoTW96YW1iaXF1ZSwgTWV0aWNhaXMgW25ld2VyIHVuaXQsIHNhbWUgbmFtZV0pFk5BRCAoTmFtaWJpYSwgRG9sbGFycykVTkdOIChOaWdlcmlhLCBOYWlyYXMpGU5JTyAoTmljYXJhZ3VhLCBDb3Jkb2JhcykTTk9LIChOb3J3YXksIEtyb25lKRlOUFIgKE5lcGFsLCBOZXBhbCBSdXBlZXMpGk5aRCAoTmV3IFplYWxhbmQsIERvbGxhcnMpEU9NUiAoT21hbiwgUmlhbHMpFFBBQiAoUGFuYW1hLCBCYWxib2EpGFBFTiAoUGVydSwgTnVldm9zIFNvbGVzKRxQR0sgKFBhcHVhIE5ldyBHdWluZWEsIEtpbmEpGFBIUCAoUGhpbGlwcGluZXMsIFBlc29zKRZQS1IgKFBha2lzdGFuLCBSdXBlZXMpFVBMTiAoUG9sYW5kLCBabG90eWNoKRdQWUcgKFBhcmFndWF5LCBHdWFyYW5pKRJRQVIgKFFhdGFyLCBSaWFscykdUk9MIChSb21hbmlhLCBMZWkgW29ic29sZXRlXSkWUk9OIChSb21hbmlhLCBOZXcgTGVpKRRSU0QgKFNlcmJpYSwgRGluYXJzKRRSVUIgKFJ1c3NpYSwgUnVibGVzKRtSV0YgKFJ3YW5kYSwgUndhbmRhIEZyYW5jcykaU0FSIChTYXVkaSBBcmFiaWEsIFJpeWFscykeU0JEIChTb2xvbW9uIElzbGFuZHMsIERvbGxhcnMpGFNDUiAoU2V5Y2hlbGxlcywgUnVwZWVzKR5TREQgKFN1ZGFuLCBEaW5hcnMgW29ic29sZXRlXSkTU0RHIChTdWRhbiwgUG91bmRzKRRTRUsgKFN3ZWRlbiwgS3Jvbm9yKRhTR0QgKFNpbmdhcG9yZSwgRG9sbGFycykaU0hQIChTYWludCBIZWxlbmEsIFBvdW5kcykhU0lUIChTbG92ZW5pYSwgVG9sYXJzIFtvYnNvbGV0ZV0pFlNLSyAoU2xvdmFraWEsIEtvcnVueSkaU0xMIChTaWVycmEgTGVvbmUsIExlb25lcykYU09TIChTb21hbGlhLCBTaGlsbGluZ3MpFlNQTCAoU2Vib3JnYSwgTHVpZ2luaSkXU1JEIChTdXJpbmFtZSwgRG9sbGFycykkU1REIChTw6NvIFRvbWUgYW5kIFByaW5jaXBlLCBEb2JyYXMpGlNWQyAoRWwgU2FsdmFkb3IsIENvbG9uZXMpE1NZUCAoU3lyaWEsIFBvdW5kcykbU1pMIChTd2F6aWxhbmQsIEVtYWxhbmdlbmkpFFRIQiAoVGhhaWxhbmQsIEJhaHQpGFRKUyAoVGFqaWtpc3RhbiwgU29tb25pKRpUTU0gKFR1cmttZW5pc3RhbiwgTWFuYXRzKRVUTkQgKFR1bmlzaWEsIERpbmFycykUVE9QIChUb25nYSwgUGEnYW5nYSkWVFJZIChUdXJrZXksIE5ldyBMaXJhKSJUVEQgKFRyaW5pZGFkIGFuZCBUb2JhZ28sIERvbGxhcnMpHFRWRCAoVHV2YWx1LCBUdXZhbHUgRG9sbGFycykZVFdEIChUYWl3YW4sIE5ldyBEb2xsYXJzKRlUWlMgKFRhbnphbmlhLCBTaGlsbGluZ3MpFlVBSCAoVWtyYWluZSwgSHJ5dm5pYSkXVUdYIChVZ2FuZGEsIFNoaWxsaW5ncykUVVlVIChVcnVndWF5LCBQZXNvcykWVVpTIChVemJla2lzdGFuLCBTdW1zKRpWRUIgKFZlbmV6dWVsYSwgQm9saXZhcmVzKRRWTkQgKFZpZXQgTmFtLCBEb25nKRNWVVYgKFZhbnVhdHUsIFZhdHUpEVdTVCAoU2Ftb2EsIFRhbGEpNFhBRiAoQ29tbXVuYXV0w6kgRmluYW5jacOocmUgQWZyaWNhaW5lIEJFQUMsIEZyYW5jcykUWEFHIChTaWx2ZXIsIE91bmNlcykSWEFVIChHb2xkLCBPdW5jZXMpHFhDRCAoRWFzdCBDYXJpYmJlYW4gRG9sbGFycyk+WERSIChJbnRlcm5hdGlvbmFsIE1vbmV0YXJ5IEZ1bmQgKElNRikgU3BlY2lhbCBEcmF3aW5nIFJpZ2h0cyk1WE9GIChDb21tdW5hdXTDqSBGaW5hbmNpw6hyZSBBZnJpY2FpbmUgQkNFQU8sIEZyYW5jcykWWFBEIChQYWxsYWRpdW0gT3VuY2VzKS1YUEYgKENvbXB0b2lycyBGcmFuw6dhaXMgZHUgUGFjaWZpcXVlIEZyYW5jcykWWFBUIChQbGF0aW51bSwgT3VuY2VzKRJZRVIgKFllbWVuLCBSaWFscykYWkFSIChTb3V0aCBBZnJpY2EsIFJhbmQpFFpNSyAoWmFtYmlhLCBLd2FjaGEpIFpXRCAoWmltYmFid2UsIFppbWJhYndlIERvbGxhcnMpFa4BA0FFRANBRk4DQUxMA0FNRANBTkcDQU9BA0FSUwNBVUQDQVdHA0FaTQNBWk4DQkFNA0JCRANCRFQDQkdOA0JIRANCSUYDQk1EA0JORANCT0IDQlJMA0JTRANCVE4DQldQA0JZUgNCWkQDQ0RGA0NIRgNDTFADQ05ZA0NPUANDUkMDQ1VQA0NWRQNDWVADQ1pLA0RKRgNES0sDRE9QA0RaRANFRUsDRUdQA0VSTgNFVEIDRkpEA0ZLUANHQlADR0VMA0dHUANHSEMDR0hTA0dJUANHTUQDR05GA0dUUQNHWUQDSEtEA0hOTANIUksDSFRHA0hVRgNJRFIDSUxTA0lNUANJTlIDSVFEA0lSUgNJU0sDSkVQA0pNRANKT0QDSlBZA0tFUwNLR1MDS0hSA0tNRgNLUFcDS1JXA0tXRANLWUQDS1pUA0xBSwNMQlADTEtSA0xSRANMU0wDTFRMA0xWTANMWUQDTUFEA01ETANNR0EDTUtEA01NSwNNTlQDTU9QA01STwNNVEwDTVVSA01WUgNNV0sDTVhOA01ZUgNNWk0DTVpOA05BRANOR04DTklPA05PSwNOUFIDTlpEA09NUgNQQUIDUEVOA1BHSwNQSFADUEtSA1BMTgNQWUcDUUFSA1JPTANST04DUlNEA1JVQgNSV0YDU0FSA1NCRANTQ1IDU0REA1NERwNTRUsDU0dEA1NIUANTSVQDU0tLA1NMTANTT1MDU1BMA1NSRANTVEQDU1ZDA1NZUANTWkwDVEhCA1RKUwNUTU0DVE5EA1RPUANUUlkDVFREA1RWRANUV0QDVFpTA1VBSANVR1gDVVlVA1VaUwNWRUIDVk5EA1ZVVgNXU1QDWEFGA1hBRwNYQVUDWENEA1hEUgNYT0YDWFBEA1hQRgNYUFQDWUVSA1pBUgNaTUsDWldEFCsDrgFnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2cWAGQCAg9kFgJmDxAPFgIfBWdkEBUDFUNBRCAoQ2FuYWRhLCBEb2xsYXJzKSFFVVIgKEV1cm8gTWVtYmVyIENvdW50cmllcywgRXVybyknVVNEIChVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EsIERvbGxhcnMpFQMDQ0FEA0VVUgNVU0QUKwMDZ2dnFgBkAgUPDxYCHwEFBFNhdmVkZAIJDw8WAh8CaGQWAmYPEGRkFgBkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYEBSJjdGwwMCRDUEgkZGxHbG9iYWxDdXJyZW5jeSRMZWZ0Qm94BSJjdGwwMCRDUEgkZGxHbG9iYWxDdXJyZW5jeSRMZWZ0Qm94BSNjdGwwMCRDUEgkZGxHbG9iYWxDdXJyZW5jeSRSaWdodEJveAUjY3RsMDAkQ1BIJGRsR2xvYmFsQ3VycmVuY3kkUmlnaHRCb3go+QMoaVp9aZ5As+fRNevt1gzACA==">
+</div>
+
+
+<script src="./AccelVMSPlainHtml_files/WebResource.axd" type="text/javascript"></script>
+<script src="./AccelVMSPlainHtml_files/WebResource(1).axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9524037C">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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">
+</div>
+        
+
+<style type="text/css">
+    .timeout_warning {
+        display: none;
+        font-size: 14px;
+        text-align: center;
+        z-index: 32000;
+    }
+</style>
+
+<script type="text/javascript">
+
+    var sessionTimeoutTicker = (function () {
+        var timeoutTimer = null;
+        var warningTimer = null;
+        var WARNING_TIME = 60 * 1000 *15;
+        var TIMEOUT_TIME = 60 * 1000 *20;
+        
+        return {
+            reset: function () {
+                clearTimeout(warningTimer);
+                clearTimeout(timeoutTimer);
+
+                warningTimer = setTimeout(onWarning, WARNING_TIME);
+                timeoutTimer = setTimeout(onTimeout, TIMEOUT_TIME);
+            }
+        };
+    })();
+
+    var EP = EP || {};
+    EP.SessionTimeoutTicker = sessionTimeoutTicker;
+
+
+    function onWarning() {
+
+        $('#divWarningMessage').dialog({
+            width: 450,
+            height: 250,
+            modal: true,
+            autoOpen: false,
+            title: '',
+            closeText: '',
+            resizable: false,
+            autoResize: false,
+            my: 'center',
+            at: 'center',
+            of: window,
+            collision: 'fit',
+            dialogClass: 'jquery-ui-dialog-main dialog-timeout',
+            create: function (event, ui) {
+                $(event.target).parent().css('position', 'fixed');
+            },
+            open: function () {
+                $(this).parent().find('.ui-dialog-titlebar-close').addClass('hidden');
+                $(this).parent().find('.ui-dialog-buttonpane').show();
+            },
+            close: function () {
+                $(this).dialog('destroy');
+
+                EP.SessionTimeoutTicker.reset();
+            }
+        });
+
+        $('#divWarningMessage').dialog('open');
+    }
+
+    function onTimeout() {
+        location.href = '/Tech/Error/SessionTimeout.aspx';
+    }
+
+    $(document).ready(function () {
+
+        EP.SessionTimeoutTicker.reset();
+
+        $('#lnkReNew').on('click', function (e) {
+            e.preventDefault();
+
+            $.get('/Tech/Ping.aspx', function (data) {
+                $('#divWarningMessage').dialog('close');
+            });
+        });
+    });
+
+
+    $(window).on('resize', function () {
+
+        $('.dialog-timeout').position({
+            my: 'center',
+            at: 'center',
+            of: window,
+            collision: 'fit'
+        });
+    });
+
+</script>
+
+<div id="divWarningMessage" class="timeout_warning">
+    <div class="d-tbl h-100 w-100">
+
+        <div class="d-tbl-row">
+            <div class="d-tbl-cell h-100 vertical-middle text-center pl-2 pr-2">
+
+                <h4>
+                    Your session is about to expire.</h4>
+
+            </div>
+        </div>
+        <div class="d-tbl-row">
+            <div class="ui-dialog-footer d-tbl-cell vertical-middle">
+                <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                    <div class="ui-dialog-buttonset btn-group">
+                        <button id="lnkReNew" type="button" class="btn btn-primary">
+                            Click here to stay logged in.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="header-admin">
+            
+
+
+<script type="text/javascript">
+
+    function ppContact() {
+        url = '/Tech/Common/Page/ContactInfo.aspx';
+        EP.openDialog(url);
+    }
+
+    function ppHelp() {
+        var url = 'https://ag.agile1.com/EP.Web.Doc/help/en-US/Admin/default.htm';
+        EP.openWin(url);
+    }
+</script>
+
+<div class="navbar-subnav clearfix">
+
+    <div class="navbar-subnav-left pull-left">
+
+        <ul class="sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkExpressHome" class="first" href="https://ag.agile1.com/Tech/Admin/AdminExpressHome.aspx?refresh=1">Home</a></li>
+
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkGlobalSetup" href="javascript: void(0)" class="sf-with-ul">Global</a>
+                <ul style="display: none;">
+                    <li>
+                        <a id="ctl00_ucMenu_lnkCodes2" href="javascript: void(0)" class="sf-with-ul">Codes</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkCodes" href="https://ag.agile1.com/Tech/Admin/GlobalCodes.aspx?refresh=1">Codes</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkCodeISO3" href="https://ag.agile1.com/Tech/Admin/GlobalCodesISO3.aspx?refresh=1">Code With Country</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu__lnkReason" href="https://ag.agile1.com/Tech/Admin/GlobalCodesReason.aspx?refresh=1">Code With Reason</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkGlobalCodeNegativeReason" href="https://ag.agile1.com/Tech/Admin/GlobalCodeNegativeReason.aspx?refresh=1">Code With Negative Reason</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSkillsSetup" href="javascript: void(0)" class="sf-with-ul">Skills</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkSkill" href="https://ag.agile1.com/Tech/Admin/GlobalSkill.aspx?refresh=1">Skills</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkSkillCategory" href="https://ag.agile1.com/Tech/Admin/GlobalSkillCategory.aspx?refresh=1">Skill Category</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkAssociatedSkill" href="https://ag.agile1.com/Tech/Admin/GlobalAssociatedSkill.aspx?refresh=1">Associated Skills</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkJobCategory" href="https://ag.agile1.com/Tech/Admin/GlobalJobCategory.aspx?refresh=1">Job Category</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkJobTitle" href="https://ag.agile1.com/Tech/Admin/GlobalJobTitle.aspx?refresh=1">Job Title</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkJobType" href="https://ag.agile1.com/Tech/Admin/GlobalJobType.aspx?refresh=1">Job Type</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkScreenings" href="https://ag.agile1.com/Tech/Admin/GlobalScreening.aspx?refresh=1">Screenings</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkEducation" href="https://ag.agile1.com/Tech/Admin/GlobalEducation.aspx?refresh=1">Education</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSpecialBilling" href="https://ag.agile1.com/Tech/Admin/GlobalSpecialBill.aspx?refresh=1">Special Bills</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientPayPolicy" href="https://ag.agile1.com/Tech/Admin/AdminClientPayPolicy.aspx?refresh=1">Pay Policy</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkShiftPremium" href="javascript: void(0)" class="sf-with-ul">Shift Premium</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkShiftPremiumGroup" href="https://ag.agile1.com/Tech/Admin/GlobalCodesShiftGroup.aspx?refresh=1">Group</a>
+                            </li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkShiftPremiumSetup" href="https://ag.agile1.com/Tech/Admin/GlobalShiftDifferential.aspx?refresh=1">Setup</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkOnBoard" href="javascript: void(0)" class="sf-with-ul">On Board</a>
+
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkOnBoardCategory" href="https://ag.agile1.com/Tech/Admin/GlobalOnBoardCategory.aspx?refresh=1">On Board Category</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkOnBoardCategoryItem" href="https://ag.agile1.com/Tech/Admin/GlobalOnBoardCategoryItems.aspx?refresh=1">On Board Category Item</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkConfig" href="https://ag.agile1.com/Tech/Admin/ConfigurationSetup.aspx?type=default&amp;refresh=1">Config</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSecurityQuestion" href="https://ag.agile1.com/Tech/Admin/GlobalSecurityQuestion.aspx">Security Question</a></li>
+
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalCountryState" href="javascript: void(0)" class="sf-with-ul">Global Country/State</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkGlobalCountry" href="https://ag.agile1.com/Tech/Admin/GlobalCountry.aspx">Countries</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkGlobalState" href="https://ag.agile1.com/Tech/Admin/GlobalState.aspx">States</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalCountryOnboardItem" href="https://ag.agile1.com/Tech/Admin/GlobalCountryOnboardItem.aspx">ICC Onboard Item</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalTimeZone" href="https://ag.agile1.com/Tech/Admin/GlobalTimeZone.aspx">Time Zones</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalCurrency" href="https://ag.agile1.com/Tech/Admin/GlobalCurrency.aspx">Currencies</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSettingContractTemplateList" href="https://ag.agile1.com/Tech/Contract/SettingContractTemplateList.aspx?refresh=1">Contract Template</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkPartner" href="javascript: void(0)" class="sf-with-ul">Partner</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkGlobalPartner" href="https://ag.agile1.com/Tech/Admin/GlobalPartner.aspx?refresh=1">Global Partner</a></li>
+
+                            <li>
+                                <a id="ctl00_ucMenu_lnkConfigPartnerSetup" href="https://ag.agile1.com/Tech/Admin/ConfigurationSetup.aspx?type=partner&amp;refresh=1">Config Partner Setup</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkClientPartner" href="https://ag.agile1.com/Tech/Admin/ClientPartner.aspx?refresh=1">Client Partner</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkConfigClientPartner" href="https://ag.agile1.com/Tech/Admin/ClientPartnerConfig.aspx?refresh=1">Config Client Partner</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkVendorLocationPartner" href="https://ag.agile1.com/Tech/Admin/VendorLocationPartner.aspx?refresh=1">Vendor Location Partner</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkConfigVendorLocationPartner" href="https://ag.agile1.com/Tech/Admin/VendorLocationPartnerConfig.aspx?refresh=1">Config Vendor Location Partner</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalUDF" href="https://ag.agile1.com/Tech/Admin/GlobalUDF.aspx">Global UDF</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkInsuranceSetup" href="javascript: void(0)" class="sf-with-ul">Insurance</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkInsurance" href="https://ag.agile1.com/Tech/Admin/GlobalInsurance.aspx?refresh=1">Insurance</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkInsuranceCategory" href="https://ag.agile1.com/Tech/Admin/GlobalInsuranceCategory.aspx?refresh=1">Insurance Category</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a id="ctl00_ucMenu_lnkDocumentSetup" href="javascript: void(0)" class="sf-with-ul">Document</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkDocument" href="https://ag.agile1.com/Tech/Admin/GlobalDocument.aspx?refresh=1">Document</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkDocumentCategory" href="https://ag.agile1.com/Tech/Admin/GlobalDocumentCategory.aspx?refresh=1">Document Category</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalSurveyQuestionsSearch" href="https://ag.agile1.com/Tech/Admin/GlobalSurveyQuestionsSearch.aspx?refresh=1">Global Survey Questions</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalUserLevel" href="https://ag.agile1.com/Tech/Admin/GlobalUserLevel.aspx?refresh=1">User Level</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkProjectManagementFee" href="https://ag.agile1.com/Tech/Admin/GlobalAssignMgmtFeeMarkup.aspx?refresh=1">Project Management Fee</a>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkWorkStatus" href="https://ag.agile1.com/Tech/Admin/GlobalWorkStatus.aspx?refresh=1">Work Status</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkGlobalPaymentTerm" href="https://ag.agile1.com/Tech/Admin/GlobalPaymentTerm.aspx?refresh=1">Global Payment Term</a></li>
+                    <li>
+                        </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkProjectBilltypeClientPayCode" href="https://ag.agile1.com/Tech/Admin/ProjectBilltypeClientPayCode.aspx">Project Bill Type + Client Pay Code</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkHtmlTemplate" href="https://ag.agile1.com/Tech/Admin/GlobalHtmlTemplate.aspx">Html Template</a></li>
+                </ul>
+            </li>
+
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkClientSetup" href="javascript: void(0)" class="sf-with-ul">Client</a>
+                <ul style="display: none;">
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClient" href="https://ag.agile1.com/Tech/Admin/AdminClient.aspx?refresh=1">Client</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkLocations" href="https://ag.agile1.com/Tech/Admin/adminClientLocation.aspx?refresh=1">Locations</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkUsers" href="https://ag.agile1.com/Tech/Admin/AdminClientUser.aspx?refresh=1">Users</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkJobTitles" href="https://ag.agile1.com/Tech/Admin/AdminClientJobTitle.aspx?refresh=1">Job Titles</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientSpecialBills" href="https://ag.agile1.com/Tech/Admin/AdminClientLocationSpecialBilling.aspx?refresh=1">Special Bills</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSurvey" href="https://ag.agile1.com/Tech/Admin/AdminClientSurvey.aspx?refresh=1">End of Assignment Survey</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkReport" href="https://ag.agile1.com/Tech/Admin/AdminClientUserReport.aspx?refresh=1">Reports</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkPayCode" href="https://ag.agile1.com/Tech/Admin/AdminClientPayCode.aspx?refresh=1">Pay Code</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkWorkLocation" href="https://ag.agile1.com/Tech/Admin/AdminClientWorkLocation.aspx?refresh=1">Work Location</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientConfigSetup" href="javascript: void(0)" class="sf-with-ul">Config</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkConfigClient" href="https://ag.agile1.com/Tech/Admin/ClientConfiguration.aspx?refresh=1">Config Client</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkConfigClientLocation" href="https://ag.agile1.com/Tech/Admin/ClientLocationConfiguration.aspx?refresh=1">Config Locations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientMessage" href="https://ag.agile1.com/Tech/Admin/AdminClientMessage.aspx?refresh=1">Message</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientDocument" href="https://ag.agile1.com/Tech/Admin/ClientDocument.aspx?refresh=1">Document</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientPageURL" href="https://ag.agile1.com/Tech/Admin/AdminClientPageURL.aspx?refresh=1">PageURL</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClassificationDecision" class="sf-with-ul">Classification Decision</a>
+                        <ul style="display: none;">
+                            <li>
+                                <a id="ctl00_ucMenu_lnkClassificationDecisionSetup" href="https://ag.agile1.com/Tech/Admin/ClassificationDecisionModule.aspx?refresh=1">Worker Classfication Rule Setup</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkClassificationDecisionHistory" href="https://ag.agile1.com/Tech/Admin/ClassificationDecisionHistory.aspx?refresh=1">Classification History</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkClientPaymentTerm" href="https://ag.agile1.com/Tech/Admin/AdminClientLocationPaymentTerm.aspx?refresh=1">Payment Term</a></li>
+                </ul>
+            </li>
+
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkVendorSetup" href="javascript: void(0)" class="sf-with-ul">Vendor</a>
+                <ul style="display: none;">
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendors" href="https://ag.agile1.com/Tech/Admin/AdminVendorDetail.aspx?refresh=1">Vendors</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendorLocations" href="https://ag.agile1.com/Tech/Admin/AdminVendorLocation.aspx?refresh=1">Locations</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendorUsers" href="https://ag.agile1.com/Tech/Admin/AdminVendorLocUsers.aspx?refresh=1">Users</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendorPayCode" href="https://ag.agile1.com/Tech/Admin/AdminVendorPayCode.aspx?refresh=1">Pay Code</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkBillingCodes" href="https://ag.agile1.com/Tech/Admin/AdminVendorOACode.aspx?refresh=1">Billing Codes</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSchedule" href="https://ag.agile1.com/Tech/Admin/AdminSchedule.aspx?refresh=1">Schedule</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkDiscountSch" href="https://ag.agile1.com/Tech/Admin/AdminVendorDiscountSch.aspx?refresh=1">Volume Discount Sch</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendorTenureDiscount" href="https://ag.agile1.com/Tech/Admin/AdminVendorTenureDiscountSetup.aspx?refresh=1">Tenure Discount</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendorConfigSetup" href="javascript: void(0)" class="sf-with-ul">Config</a>
+                        <ul style="display: none;">
+
+                            <li>
+                                <a id="ctl00_ucMenu_lnkVendorConfig" href="https://ag.agile1.com/Tech/Admin/VendorConfiguration.aspx?refresh=1">Config Vendor</a></li>
+                            <li>
+                                <a id="ctl00_ucMenu_lnkVendorLocationConfig" href="https://ag.agile1.com/Tech/Admin/VendorLocationConfiguration.aspx?refresh=1">Config Locations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkVendorLocationMSPSetup" href="https://ag.agile1.com/Tech/Admin/VendorLocationMSPSetup.aspx?refresh=1">MSP Setup</a></li>
+                </ul>
+            </li>
+
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkReports" href="javascript: void(0)" class="sf-with-ul">Reports</a>
+                <ul style="display: none;">
+                    <li>
+                        <a id="ctl00_ucMenu_lnkAdminReports" href="https://ag.agile1.com/Tech/Reports/Report/rptSearch.aspx?refresh=1">Admin Reports</a></li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkAdhoReport" href="https://ag.agile1.com/Tech/Admin/AdminClientUserAdhocReport.aspx?refresh=1">Add Adhoc Report to Users</a></li>
+                </ul>
+            </li>
+
+
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkTimecardAdjustment" href="https://ag.agile1.com/Tech/Admin/TimecardAdjustmentSearch.aspx?refresh=1">Timecard Adjustment</a>
+            </li>
+            <li class="current">
+                <a id="ctl00_ucMenu_lnkSOW" class="last sf-with-ul" href="javascript: void(0)">Templates</a>
+                <ul style="display: none;">
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSOWProjectTemplate" href="https://ag.agile1.com/Tech/SOW/Create_ProjectList.aspx?refresh=1">Type</a>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSOWQuestions" href="https://ag.agile1.com/Tech/SOW/Create_Questions.aspx?refresh=1">Questions</a>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSOWPageTemplate" href="https://ag.agile1.com/Tech/SOW/Create_PageTemplate.aspx?refresh=1">Themes </a>
+                    </li>
+                    <li>
+                        <a id="ctl00_ucMenu_lnkSOWPageTemplatePreLoaded" href="https://ag.agile1.com/Tech/SOW/Create_PageTemplatePreLoadedList.aspx?refresh=1">Layouts</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-subnav-right pull-right">
+        <ul class="sf-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+            <li><a href="https://ag.agile1.com/Tech/Admin/GlobalCurrency.aspx#" class="first" style="color: white">PLUSMINUS</a></li>
+            <li>
+                <a id="ctl00_ucMenu_lnkContact" href="javascript:void ppContact();">Contact</a></li>
+            <li>
+                <a id="ctl00_ucMenu_lnkHelp" href="javascript:void ppHelp();">Help</a></li>
+            <li>
+                <a id="ctl00_ucMenu_lnkLogOut" class="last" href="https://ag.agile1.com/Tech/frmLogout.aspx">Sign Out</a></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('ul.sf-menu').superfish({
+        animation: {
+            opacity: 'show',
+            height: 'show'
+        },
+        speed: 'fast',                          
+        autoArrows:  true,                           
+        dropShadows: true
+	});
+</script>
+        </div>
+        <div class="container-fluid clearfix">
+            <article id="main-article" class="content content-info">
+                
+    <div class="pa-2">
+        <h4 class="lblLarge">
+            <!-- ADD: SampleComponent -->
+            <Sample>
+            <span id="ctl00_CPH_lblPageTitle">Global Currency List</span>
+            </Sample>
+        </h4>
+        <table id="ctl00_CPH_dlGlobalCurrency" class="dual-list" border="0">
+	<tbody><tr>
+		<td colspan="2"><span>Available Global Currency List</span></td><td colspan="2"><span>Active Global Currency List</span></td>
+	</tr><tr>
+		<td align="center"><select size="20" name="ctl00$CPH$dlGlobalCurrency$LeftBox" multiple="multiple" id="ctl00_CPH_dlGlobalCurrency_LeftBox" class="dual-list-left">
+			<option value="AED">AED (United Arab Emirates, Dirhams)</option>
+			<option value="AFN">AFN (Afghanistan, Afghanis)</option>
+			<option value="ALL">ALL (Albania, Leke)</option>
+			<option value="AMD">AMD (Armenia, Drams)</option>
+			<option value="ANG">ANG (Netherlands Antilles, Guilders (also called Florins))</option>
+			<option value="AOA">AOA (Angola, Kwanza)</option>
+			<option value="ARS">ARS (Argentina, Pesos)</option>
+			<option value="AUD">AUD (Australia, Dollars)</option>
+			<option value="AWG">AWG (Aruba, Guilders (also called Florins))</option>
+			<option value="AZM">AZM (Azerbaijan, Manats [obsolete])</option>
+			<option value="AZN">AZN (Azerbaijan, New Manats)</option>
+			<option value="BAM">BAM (Bosnia and Herzegovina, Convertible Marka)</option>
+			<option value="BBD">BBD (Barbados, Dollars)</option>
+			<option value="BDT">BDT (Bangladesh, Taka)</option>
+			<option value="BGN">BGN (Bulgaria, Leva)</option>
+			<option value="BHD">BHD (Bahrain, Dinars)</option>
+			<option value="BIF">BIF (Burundi, Francs)</option>
+			<option value="BMD">BMD (Bermuda, Dollars)</option>
+			<option value="BND">BND (Brunei Darussalam, Dollars)</option>
+			<option value="BOB">BOB (Bolivia, Bolivianos)</option>
+			<option value="BRL">BRL (Brazil, Brazil Real)</option>
+			<option value="BSD">BSD (Bahamas, Dollars)</option>
+			<option value="BTN">BTN (Bhutan, Ngultrum)</option>
+			<option value="BWP">BWP (Botswana, Pulas)</option>
+			<option value="BYR">BYR (Belarus, Rubles)</option>
+			<option value="BZD">BZD (Belize, Dollars)</option>
+			<option value="CDF">CDF (Congo/Kinshasa, Congolese Francs)</option>
+			<option value="CHF">CHF (Switzerland, Francs)</option>
+			<option value="CLP">CLP (Chile, Pesos)</option>
+			<option value="CNY">CNY (China, Yuan Renminbi)</option>
+			<option value="COP">COP (Colombia, Pesos)</option>
+			<option value="CRC">CRC (Costa Rica, Colones)</option>
+			<option value="CUP">CUP (Cuba, Pesos)</option>
+			<option value="CVE">CVE (Cape Verde, Escudos)</option>
+			<option value="CYP">CYP (Cyprus, Pounds)</option>
+			<option value="CZK">CZK (Czech Republic, Koruny)</option>
+			<option value="DJF">DJF (Djibouti, Francs)</option>
+			<option value="DKK">DKK (Denmark, Kroner)</option>
+			<option value="DOP">DOP (Dominican Republic, Pesos)</option>
+			<option value="DZD">DZD (Algeria, Algeria Dinars)</option>
+			<option value="EEK">EEK (Estonia, Krooni)</option>
+			<option value="EGP">EGP (Egypt, Pounds)</option>
+			<option value="ERN">ERN (Eritrea, Nakfa)</option>
+			<option value="ETB">ETB (Ethiopia, Birr)</option>
+			<option value="FJD">FJD (Fiji, Dollars)</option>
+			<option value="FKP">FKP (Falkland Islands (Malvinas), Pounds)</option>
+			<option value="GBP">GBP (United Kingdom, Pounds)</option>
+			<option value="GEL">GEL (Georgia, Lari)</option>
+			<option value="GGP">GGP (Guernsey, Pounds)</option>
+			<option value="GHC">GHC (Ghana, Cedis)</option>
+			<option value="GHS">GHS (Ghana, Cedis)</option>
+			<option value="GIP">GIP (Gibraltar, Pounds)</option>
+			<option value="GMD">GMD (Gambia, Dalasi)</option>
+			<option value="GNF">GNF (Guinea, Francs)</option>
+			<option value="GTQ">GTQ (Guatemala, Quetzales)</option>
+			<option value="GYD">GYD (Guyana, Dollars)</option>
+			<option value="HKD">HKD (Hong Kong, Dollars)</option>
+			<option value="HNL">HNL (Honduras, Lempiras)</option>
+			<option value="HRK">HRK (Croatia, Kuna)</option>
+			<option value="HTG">HTG (Haiti, Gourdes)</option>
+			<option value="HUF">HUF (Hungary, Forint)</option>
+			<option value="IDR">IDR (Indonesia, Rupiahs)</option>
+			<option value="ILS">ILS (Israel, New Shekels)</option>
+			<option value="IMP">IMP (Isle of Man, Pounds)</option>
+			<option value="INR">INR (India, Rupees)</option>
+			<option value="IQD">IQD (Iraq, Dinars)</option>
+			<option value="IRR">IRR (Iran, Rials)</option>
+			<option value="ISK">ISK (Iceland, Kronur)</option>
+			<option value="JEP">JEP (Jersey, Pounds)</option>
+			<option value="JMD">JMD (Jamaica, Dollars)</option>
+			<option value="JOD">JOD (Jordan, Dinars)</option>
+			<option value="JPY">JPY (Japan, Yen)</option>
+			<option value="KES">KES (Kenya, Shillings)</option>
+			<option value="KGS">KGS (Kyrgyzstan, Soms)</option>
+			<option value="KHR">KHR (Cambodia, Riels)</option>
+			<option value="KMF">KMF (Comoros, Francs)</option>
+			<option value="KPW">KPW (Korea (North), Won)</option>
+			<option value="KRW">KRW (Korea (South), Won)</option>
+			<option value="KWD">KWD (Kuwait, Dinars)</option>
+			<option value="KYD">KYD (Cayman Islands, Dollars)</option>
+			<option value="KZT">KZT (Kazakhstan, Tenge)</option>
+			<option value="LAK">LAK (Laos, Kips)</option>
+			<option value="LBP">LBP (Lebanon, Pounds)</option>
+			<option value="LKR">LKR (Sri Lanka, Rupees)</option>
+			<option value="LRD">LRD (Liberia, Dollars)</option>
+			<option value="LSL">LSL (Lesotho, Maloti)</option>
+			<option value="LTL">LTL (Lithuania, Litai)</option>
+			<option value="LVL">LVL (Latvia, Lati)</option>
+			<option value="LYD">LYD (Libya, Dinars)</option>
+			<option value="MAD">MAD (Morocco, Dirhams)</option>
+			<option value="MDL">MDL (Moldova, Lei)</option>
+			<option value="MGA">MGA (Madagascar, Ariary)</option>
+			<option value="MKD">MKD (Macedonia, Denars)</option>
+			<option value="MMK">MMK (Myanmar (Burma), Kyats)</option>
+			<option value="MNT">MNT (Mongolia, Tugriks)</option>
+			<option value="MOP">MOP (Macau, Patacas)</option>
+			<option value="MRO">MRO (Mauritania, Ouguiyas)</option>
+			<option value="MTL">MTL (Malta, Liri)</option>
+			<option value="MUR">MUR (Mauritius, Rupees)</option>
+			<option value="MVR">MVR (Maldives (Maldive Islands), Rufiyaa)</option>
+			<option value="MWK">MWK (Malawi, Kwachas)</option>
+			<option value="MXN">MXN (Mexico, Pesos)</option>
+			<option value="MYR">MYR (Malaysia, Ringgits)</option>
+			<option value="MZM">MZM (Mozambique, Meticais [obsolete])</option>
+			<option value="MZN">MZN (Mozambique, Meticais [newer unit, same name])</option>
+			<option value="NAD">NAD (Namibia, Dollars)</option>
+			<option value="NGN">NGN (Nigeria, Nairas)</option>
+			<option value="NIO">NIO (Nicaragua, Cordobas)</option>
+			<option value="NOK">NOK (Norway, Krone)</option>
+			<option value="NPR">NPR (Nepal, Nepal Rupees)</option>
+			<option value="NZD">NZD (New Zealand, Dollars)</option>
+			<option value="OMR">OMR (Oman, Rials)</option>
+			<option value="PAB">PAB (Panama, Balboa)</option>
+			<option value="PEN">PEN (Peru, Nuevos Soles)</option>
+			<option value="PGK">PGK (Papua New Guinea, Kina)</option>
+			<option value="PHP">PHP (Philippines, Pesos)</option>
+			<option value="PKR">PKR (Pakistan, Rupees)</option>
+			<option value="PLN">PLN (Poland, Zlotych)</option>
+			<option value="PYG">PYG (Paraguay, Guarani)</option>
+			<option value="QAR">QAR (Qatar, Rials)</option>
+			<option value="ROL">ROL (Romania, Lei [obsolete])</option>
+			<option value="RON">RON (Romania, New Lei)</option>
+			<option value="RSD">RSD (Serbia, Dinars)</option>
+			<option value="RUB">RUB (Russia, Rubles)</option>
+			<option value="RWF">RWF (Rwanda, Rwanda Francs)</option>
+			<option value="SAR">SAR (Saudi Arabia, Riyals)</option>
+			<option value="SBD">SBD (Solomon Islands, Dollars)</option>
+			<option value="SCR">SCR (Seychelles, Rupees)</option>
+			<option value="SDD">SDD (Sudan, Dinars [obsolete])</option>
+			<option value="SDG">SDG (Sudan, Pounds)</option>
+			<option value="SEK">SEK (Sweden, Kronor)</option>
+			<option value="SGD">SGD (Singapore, Dollars)</option>
+			<option value="SHP">SHP (Saint Helena, Pounds)</option>
+			<option value="SIT">SIT (Slovenia, Tolars [obsolete])</option>
+			<option value="SKK">SKK (Slovakia, Koruny)</option>
+			<option value="SLL">SLL (Sierra Leone, Leones)</option>
+			<option value="SOS">SOS (Somalia, Shillings)</option>
+			<option value="SPL">SPL (Seborga, Luigini)</option>
+			<option value="SRD">SRD (Suriname, Dollars)</option>
+			<option value="STD">STD (São Tome and Principe, Dobras)</option>
+			<option value="SVC">SVC (El Salvador, Colones)</option>
+			<option value="SYP">SYP (Syria, Pounds)</option>
+			<option value="SZL">SZL (Swaziland, Emalangeni)</option>
+			<option value="THB">THB (Thailand, Baht)</option>
+			<option value="TJS">TJS (Tajikistan, Somoni)</option>
+			<option value="TMM">TMM (Turkmenistan, Manats)</option>
+			<option value="TND">TND (Tunisia, Dinars)</option>
+			<option value="TOP">TOP (Tonga, Pa'anga)</option>
+			<option value="TRY">TRY (Turkey, New Lira)</option>
+			<option value="TTD">TTD (Trinidad and Tobago, Dollars)</option>
+			<option value="TVD">TVD (Tuvalu, Tuvalu Dollars)</option>
+			<option value="TWD">TWD (Taiwan, New Dollars)</option>
+			<option value="TZS">TZS (Tanzania, Shillings)</option>
+			<option value="UAH">UAH (Ukraine, Hryvnia)</option>
+			<option value="UGX">UGX (Uganda, Shillings)</option>
+			<option value="UYU">UYU (Uruguay, Pesos)</option>
+			<option value="UZS">UZS (Uzbekistan, Sums)</option>
+			<option value="VEB">VEB (Venezuela, Bolivares)</option>
+			<option value="VND">VND (Viet Nam, Dong)</option>
+			<option value="VUV">VUV (Vanuatu, Vatu)</option>
+			<option value="WST">WST (Samoa, Tala)</option>
+			<option value="XAF">XAF (Communauté Financière Africaine BEAC, Francs)</option>
+			<option value="XAG">XAG (Silver, Ounces)</option>
+			<option value="XAU">XAU (Gold, Ounces)</option>
+			<option value="XCD">XCD (East Caribbean Dollars)</option>
+			<option value="XDR">XDR (International Monetary Fund (IMF) Special Drawing Rights)</option>
+			<option value="XOF">XOF (Communauté Financière Africaine BCEAO, Francs)</option>
+			<option value="XPD">XPD (Palladium Ounces)</option>
+			<option value="XPF">XPF (Comptoirs Français du Pacifique Francs)</option>
+			<option value="XPT">XPT (Platinum, Ounces)</option>
+			<option value="YER">YER (Yemen, Rials)</option>
+			<option value="ZAR">ZAR (South Africa, Rand)</option>
+			<option value="ZMK">ZMK (Zambia, Kwacha)</option>
+			<option value="ZWD">ZWD (Zimbabwe, Zimbabwe Dollars)</option>
+
+		</select><input name="ctl00$CPH$dlGlobalCurrency$LeftBox$itemTracker" type="hidden" id="ctl00_CPH_dlGlobalCurrency_LeftBox_itemTracker"></td><td align="center" valign="middle"><input type="submit" name="ctl00$CPH$dlGlobalCurrency$MoveRight" value="»" id="ctl00_CPH_dlGlobalCurrency_MoveRight" class="dual-list-btns btn btn-default" style="font-size:18px;font-weight:bold;"><br><br><input type="submit" name="ctl00$CPH$dlGlobalCurrency$MoveLeft" value="«" id="ctl00_CPH_dlGlobalCurrency_MoveLeft" class="dual-list-btns btn btn-default" style="font-size:18px;font-weight:bold;"></td><td align="center"><select size="20" name="ctl00$CPH$dlGlobalCurrency$RightBox" multiple="multiple" id="ctl00_CPH_dlGlobalCurrency_RightBox" class="dual-list-right">
+			<option value="CAD">CAD (Canada, Dollars)</option>
+			<option value="EUR">EUR (Euro Member Countries, Euro)</option>
+			<option value="USD">USD (United States of America, Dollars)</option>
+
+		</select><input name="ctl00$CPH$dlGlobalCurrency$RightBox$itemTracker" type="hidden" id="ctl00_CPH_dlGlobalCurrency_RightBox_itemTracker"></td>
+	</tr>
+</tbody></table>
+        <div class="btn-wrapper btn-group">
+            <input type="submit" name="ctl00$CPH$cmdSave" value="Save" id="ctl00_CPH_cmdSave" class="btn btn-default">
+        </div>
+    </div>
+
+            </article>
+        </div>
+        <footer class="copyright">
+            
+
+<script type="text/javascript">
+
+    function twoColLayout() {
+    
+        /*   
+        This fixes div "table-responsive" in two pane layout - so that if the table 
+        is too large due to different langauges, too much data, etc a scrollbar appears so 
+        it does not break two pane layout. 
+    
+        Media queries are required but are slow - but without media queries - the ui will flash. 
+        1st use media query to resize UI - then remove media query and use javascript instead 
+        since JS is faster.
+
+        Needs to be placed here instead of $document.ready - needs to execute immediately after 
+        div "data-container" loads    
+        */
+
+        var twoColRef = $('#theme-1 .layout-two-column-container .data-container'),
+            twoColWidth = 0,
+            twoColNewWidth = 0;
+
+        /*remove css media queries - use jquery for resize since its faster, 
+                but media query are required to prevent ui flash on load */
+        twoColRef.removeClass('media-query'); 
+
+        /* figures out layout based on various widths that break layout */
+        twoColWidth = parseInt($(window).outerWidth(true));
+                
+        if(twoColWidth <= 1280) {    
+                
+            if(twoColWidth <= 1024) {                
+                
+                if(twoColWidth <= 959) {
+                    twoColNewWidth = 725;
+                }
+                else {
+                    twoColNewWidth = twoColWidth - 250;
+                }
+            }
+            else {
+                twoColNewWidth = twoColWidth - 340;
+            }
+
+            twoColRef.css('max-width', twoColNewWidth);
+        }
+        else {
+            twoColRef.css('max-width', 'none');
+        }
+
+    }
+  
+    $(window).on('load.twoColLayout resize.twoColLayout', function(){
+        /* detects if two column layout then sets the correct max-width to the main container */
+        if($('#theme-1 .layout-two-column-container .data-container').length){             
+            twoColLayout();
+        }
+
+    });
+    
+</script>
+
+<div class="ui-footer-faux d-tbl tbl-fixed w-100">
+    <div class="d-tbl-row">
+        <div class="d-tbl-cell vertical-top ui-footer-faux-layout-col-1-container">
+            <div class="ui-footer-faux-layout-col-1">
+
+                <div class="main-ui-faux">
+                    <div class="main-ui-faux-inner"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="d-tbl-cell vertical-top g-1">
+            <div class="ui-footer-faux-gutter"></div>
+        </div>
+        <div class="d-tbl-cell vertical-top ui-footer-faux-layout-col-2-container w-100">
+            <div class="ui-footer-faux-layout-col-2 w-100">
+
+                <div class="main-ui-faux">
+                    <div class="main-ui-faux-inner"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-container d-tbl w-100 ml-auto mr-auto clearfix">
+    <div class="d-tbl-row">        
+        <div class="footer-left d-tbl-cell vertical-top text-left">     
+            <div class="d-tbl footer-height">
+                <div class="d-tbl-row">
+                    <div class="footer-copyright-text d-tbl-cell vertical-middle">
+
+                        © 2001-2019 AgileOne. All Rights Reserved.
+                            &nbsp;Version
+                            &nbsp;9.1.0.0
+                            &nbsp;SVR&nbsp;06&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://ag.agile1.com/EP.Web.Doc/privacy-policy/en-US/AgileOne%20Privacy%20Policy.pdf" target="_blank">Privacy Policy</a>
+
+                    </div>   
+                </div>
+            </div>            
+        </div>
+        <div class="footer-right d-tbl-cell vertical-top pull-right">
+
+            <div class="d-tbl footer-height">
+                <div class="d-tbl-row">
+                    <div class="footer-logo-text d-tbl-cell vertical-middle text-nowrap">
+                        Powered by &nbsp;
+                    </div>
+                    <div class="footer-logo-img d-tbl-cell vertical-middle">
+                        <img id="ctl00_ucFooter_Image1" class="footer-height" src="./AccelVMSPlainHtml_files/logo-grayed.png" alt="AgileOne" align="middle">
+                    </div>
+                </div>
+            </div>            
+        </div>        
+    </div>
+</div>
+
+
+        </footer>
+        <div class="pl-2">
+            
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var MetaBuilders_DualLists =  new Array({ LeftBoxID:'ctl00_CPH_dlGlobalCurrency_LeftBox', RightBoxID:'ctl00_CPH_dlGlobalCurrency_RightBox', MoveRightID:'ctl00_CPH_dlGlobalCurrency_MoveRight', MoveAllRightID:'ctl00_CPH_dlGlobalCurrency_MoveAllRight', MoveLeftID:'ctl00_CPH_dlGlobalCurrency_MoveLeft', MoveAllLeftID:'ctl00_CPH_dlGlobalCurrency_MoveAllLeft', MoveUpID:'ctl00_CPH_dlGlobalCurrency_MoveUp', MoveDownID:'ctl00_CPH_dlGlobalCurrency_MoveDown' });
+var MetaBuilders_DynamicListBoxes =  new Array({ ID:'ctl00_CPH_dlGlobalCurrency_LeftBox', TrackerID:'ctl00_CPH_dlGlobalCurrency_LeftBox_itemTracker' }, { ID:'ctl00_CPH_dlGlobalCurrency_RightBox', TrackerID:'ctl00_CPH_dlGlobalCurrency_RightBox_itemTracker' });
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+MetaBuilders_DualList_Init();MetaBuilders_DynamicListBox_Init();//]]>
+</script>
+</form>
+
+    <!-- ADD:START -->
+</div> <!-- id="original" -->
+    <!-- ADD: END -->
+        
+</body></html>
